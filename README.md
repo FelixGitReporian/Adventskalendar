@@ -22,7 +22,6 @@ Hauptmerkmale
 Repository klonen:
 
     git clone https://github.com/FelixGitReporian/Adventskalendar.git
-    cd AdventDecisionGame
 
 
 ## Abhängigkeiten installieren:
