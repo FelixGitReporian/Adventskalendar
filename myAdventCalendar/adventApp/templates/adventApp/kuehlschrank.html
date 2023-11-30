@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Kühlschrank{% endblock %}
+
+{% block content %}
+    <div id="kuehlschrank" style="background-image: url('{% static 'adventApp/kuehlschrankbild.png' %}');" data-tag="{{ tag }}">
+        <!-- Tagesnachricht anzeigen -->
+        <div class="tagesnachricht">
+            {{ tagesnachricht }}
+        </div>
+        <!-- Iterieren über Notizzettel -->
+        {% for notizzettel in notizzettel_list %}
+            <div class="draggable notizzettel" draggable="true" style="background-image: url('{% static 'adventApp/notizzettelbild.png' %}'); left: {{ notizzettel.x_position }}px; top: {{ notizzettel.y_position }}px;" data-id="{{ notizzettel.id }}" data-type="notizzettel">
+                <p>{{ notizzettel.inhalt }}</p>
+                {% if notizzettel.character_name %}
+                    <span class="charaktername">{{ notizzettel.character_name }}</span>
+                {% else %}
+                    <span class="charaktername">Unbekannt</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <!-- Iterieren über Bilder -->
+        {% for bild in bild_list %}
+            <div class="draggable bild" draggable="true" style="left: {{ bild.x_position }}px; top: {{ bild.y_position }}px;" data-id="{{ bild.id }}" data-type="bild">
+                <img src="{{ bild.bild.url }}" alt="{{ bild.titel }}" style="width: 150px; height: 200px; object-fit: cover;">
+                {% if bild.character_name %}
+                    <span class="charaktername">{{ bild.character_name }}</span>
+                {% else %}
+                    <span class="charaktername">Unbekannt</span>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <a href="{% url 'erstelle_notizzettel' tag %}">Notizzettel erstellen</a>
+        <a href="{% url 'lade_bild_hoch' tag %}">Bild hochladen</a>
+    </div>
+{% endblock %}

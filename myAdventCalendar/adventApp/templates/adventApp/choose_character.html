@@ -1,0 +1,44 @@
+
+{% load static %}  <!-- Dies lÃ¤dt das 'static'-Tag -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Weitere Meta-Tags und Titel -->
+    <link rel="stylesheet" href="{% static 'adventApp/style.css' %}">
+</head>
+<body>
+    <div class="main-content">
+        <div class="character-grid">
+            {% for character in characters %}
+            <div class="character-container {% if character.is_taken %}taken{% endif %}">
+                <div class="character" onclick="showCharacterDetails({{ character.id }})">
+                    <img src="{{ character.image.url }}" alt="{{ character.name }}" class="character-image">
+                    <h3>{{ character.name }}</h3>
+                </div>
+                {% if character.is_taken %}
+                <div class="reset-container">
+                    <label for="reset-{{ character.id }}">Charakter zurücksetzen:</label>
+                    <input type="range" id="reset-{{ character.id }}" min="0" max="1">
+                    <button class="reset-button" data-character-id="{{ character.id }}" onclick="resetCharacter({{ character.id }}, event)">Reset</button>
+                </div>
+                {% endif %}
+            </div>
+            <!-- Modal fÃ¼r Charakterdetails -->
+            <div id="characterModal{{ character.id }}" class="modal">
+                <div class="modal-content">
+                    <p>{{ character.description }}</p>
+                    <button onclick="confirmSelection('{{ character.id }}')">Wählen</button>
+                    <a href="/advent/choose-character/" class="back-to-selection">Zurück zur Auswahl</a>
+                </div>
+            </div>
+            {% endfor %}
+            
+        </div>
+        
+    </div>
+    <script type="text/javascript">
+        var characterId = "{{ character.id }}";
+    </script>
+    <script src="{% static 'adventApp/character.js' %}"></script>
+</body>
+</html>

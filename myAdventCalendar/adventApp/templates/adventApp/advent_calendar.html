@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Adventskalender{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'adventApp/style_calendar.css' %}">
+    <div id="adventNumbers">
+        {% for number in advent_numbers %}
+            <div class="advent-number" style="left: {{ number.position_x }}%; top: {{ number.position_y }}%; font-size: {{ number.day }}px; color: {{ number.color }}; transform: rotate({{ number.rotation }}deg);">
+                <a href="{% url 'advent_day' day=number.day %}">{{ number.day }}</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

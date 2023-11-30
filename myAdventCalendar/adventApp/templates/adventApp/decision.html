@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main-content" style="background-image: url('{{ decision.background_image.url }}');">
+    <div class="decision-container">
+        <div class="text-box">
+            <h1>{{ decision.title }}</h1>
+            <p>{{ decision.description }}</p>
+            <!-- Hier wird die Nachricht angezeigt -->
+            {% if message %}
+                <p class="message">{{ message }}</p>
+            {% endif %}
+            <!-- Abstimmungsformular -->
+            <form method="post" action="{% url 'vote' decision.id %}">
+                {% csrf_token %}
+                <div class="choice">
+                    <input type="radio" id="choiceA" name="choice" value="A">
+                    <label for="choiceA">Option A ({{ decision.next_decision_a.title }})</label>
+                </div>
+                <div class="choice">
+                    <input type="radio" id="choiceB" name="choice" value="B">
+                    <label for="choiceB">Option B ({{ decision.next_decision_b.title }})</label>
+                </div>
+                <button type="submit">Abstimmen</button>
+            </form>
+            <!-- Modal für Spieloptionen, angezeigt nur bei decision_id = 11 -->
+            {% if decision.id == 11 %}
+            <div id="game-options-modal" class="modal">
+                <div class="modal-content">
+                    <h2>Willkommen beim Entscheidungsspiel!</h2>
+                    <p>Wählen Sie eine der folgenden Optionen:</p>
+                    <button id="join-game">Bestehendem Spiel beitreten</button>
+                    <button id="start-new-game">Neues Spiel starten</button>
+                </div>
+            </div>
+            {% endif %}
+            {% if message %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+

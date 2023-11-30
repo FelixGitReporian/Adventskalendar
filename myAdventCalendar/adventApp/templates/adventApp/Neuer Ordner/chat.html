@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+</head>
+<body>
+    <div id="chat-box">
+        {% for message in messages %}
+            <p><strong>{{ message.author.username }}:</strong> {{ message.content }}</p>
+        {% endfor %}
+    </div>
+    <textarea id="chat-message"></textarea>
+    <button onclick="sendMessage()">Send</button>
+    
+    <script>
+        function sendMessage() {
+            var message = document.getElementById('chat-message').value;
+            fetch('/chat/send/', {
+                method: 'POST',
+                body: JSON.stringify({
+                    'message': message,
+                    'character_id': '{{ character.id }}'  // Charakter-ID übergeben
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                }
+            });
+        }
+    </script>
+</body>
+</html>

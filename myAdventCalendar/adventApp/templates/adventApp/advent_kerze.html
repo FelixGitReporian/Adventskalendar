@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Schönen Advent dir</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'adventApp/advent_kerze.css' %}">
+</head>
+<body>
+    <video autoplay loop controls>
+        <source src="{% static 'adventApp/video.mp4' %}" type="video/mp4">
+        <!-- Fügen Sie hier ggf. weitere Videoformate hinzu (WebM, Ogg) -->
+    </video>
+</body>
+</html>

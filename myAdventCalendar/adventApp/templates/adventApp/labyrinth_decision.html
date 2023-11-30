@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main-content" style="background-image: url('{{ labyrinth.background_image.url }}');">
+    <div class="labyrinth-container">
+        <div class="text-box">
+            <h1>{{ labyrinth.title }}</h1>
+            <p>{{ labyrinth.description }}</p>
+            {% if message %}
+                <p class="message">{{ message }}</p>
+            {% endif %}
+            <form method="post" action="{% url 'vote_labyrinth' labyrinth.id %}">
+                {% csrf_token %}
+                <div class="choice">
+                    <input type="radio" id="choiceA" name="choice" value="A">
+                    <label for="choiceA">{{ labyrinth.next_decision_a.title }}</label>
+                </div>
+                <div class="choice">
+                    <input type="radio" id="choiceB" name="choice" value="B">
+                    <label for="choiceB">{{ labyrinth.next_decision_b.title }}</label>
+                </div>
+                <button type="submit">Abstimmen</button>
+            </form>
+            {% if message %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

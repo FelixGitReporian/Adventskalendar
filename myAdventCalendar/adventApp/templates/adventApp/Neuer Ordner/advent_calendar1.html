@@ -1,0 +1,19 @@
+
+{% load static %}  <!-- Dies  das 'static'-Tag -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Weitere Meta-Tags und Titel -->
+    <link rel="stylesheet" href="{% static 'adventApp/style.css' %}">
+</head>
+<body>
+    <div id="adventNumbers">
+        {% for number in advent_numbers %}
+            <div class="advent-number" style="position: absolute; left: {{ number.position_x }}%; top: {{ number.position_y }}%;">
+                <a href="{% url 'advent_day' day=number.day %}">{{ number.day }}</a>
+            </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>

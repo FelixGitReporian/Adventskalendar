@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weihnachtsbaum</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'weihnachtsbaum.css' %}">
+</head>
+<body>
+
+<div id="tree-area" style="background-image: url('{% static 'path/to/your/background-image.jpg' %}');">
+    {% for ornament in ornaments %}
+    <img src="{{ ornament.character.image.url }}" class="draggable" alt="Ornament" data-id="{{ ornament.id }}" data-type="ornament" style="left: {{ ornament.position_x }}px; top: {{ ornament.position_y }}px;">
+    {% endfor %}
+
+    {% for gift in gifts %}
+    <div class="gift" data-note="{{ gift.note }}" data-id="{{ gift.id }}" data-type="gift" style="left: {{ gift.position_x }}px; top: {{ gift.position_y }}px;">
+        <img src="{{ gift.receiver.image.url }}" class="draggable" alt="Geschenk">
+    </div>
+    {% endfor %}
+</div>
+
+<script src="{% static 'weihnachtsbaum.js' %}"></script>
+</body>
+</html>

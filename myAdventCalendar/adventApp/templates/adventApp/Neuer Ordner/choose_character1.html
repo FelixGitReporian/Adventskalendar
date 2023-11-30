@@ -1,0 +1,9 @@
+{% for character in characters %}
+<div class="character">
+    <img src="{{ character.image.url }}" alt="{{ character.name }}">
+    <h2>{{ character.name }}</h2>
+    <p>{{ character.description }}</p>
+    <p>{{ character.background_text }}</p>
+    <!-- Link oder Button zur Auswahl des Charakters -->
+</div>
+{% endfor %}

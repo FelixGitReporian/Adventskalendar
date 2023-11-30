@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Gemeinsame Meta-Tags und Titel -->
+    <!-- <link rel="stylesheet" href="{% static 'adventApp/chat.css' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'adventApp/style.css' %}"> <!-- Allgemeines Stylesheet -->
+    <title>{% block title %}Meine Anwendung{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    <!-- Hier wird der spezifische Inhalt der Unterseiten eingefügt -->
+    {% endblock %}
+
+    <!-- Chat Container am Ende des Body -->
+    <div id="chat-container">
+        <div id="chat-messages"></div>
+        <textarea id="chat-message"></textarea>
+        <button onclick="sendMessage()">Senden</button>
+    </div>
+
+    <script type="text/javascript">
+        var characterId = "{{ character.id }}";
+    </script>
+    <script src="{% static 'adventApp/chat.js' %}"></script>
+</body>
+</html>

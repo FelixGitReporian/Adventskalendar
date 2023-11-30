@@ -1,0 +1,16 @@
+{% for character in characters %}
+<div class="character">
+    <img src="{{ character.image.url }}" alt="{{ character.name }}">
+    <h3>{{ character.name }}</h3>
+    <p>{{ character.description }}</p>
+    {% if character.id in taken_characters %}
+    <p>Dieser Charakter ist bereits gewählt.</p>
+    {% else %}
+    <form method="post" action="{% url 'register' %}">
+        {% csrf_token %}
+        <input type="hidden" name="character" value="{{ character.id }}">
+        <button type="submit">Wählen</button>
+    </form>
+    {% endif %}
+</div>
+{% endfor %}

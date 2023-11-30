@@ -1,0 +1,45 @@
+
+{% load static %}  <!-- Dies  das 'static'-Tag -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Weitere Meta-Tags und Titel -->
+    <link rel="stylesheet" href="{% static 'adventApp/style.css' %}">
+</head>
+<body>
+    <div class="main-content">
+        <div class="character-grid">
+            {% for character in characters %}
+            <div class="character" onclick="showCharacterDetails({{ character.id }})">
+                <img src="{{ character.image.url }}" alt="{{ character.name }}" class="character-image">
+                <h3>{{ character.name }}</h3>
+            </div>
+            <!-- Modal  Charakterdetails -->
+            <div id="characterModal{{ character.id }}" class="modal">
+                <div class="modal-content">
+                    <p>{{ character.description }}</p>
+                    <button onclick="confirmSelection('{{ character.id }}')">Waehlen</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Verstecktes Registrierungsformular, das nach dem Klicken auf "WÃ¤hlen" angezeigt wird -->
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <form method="post" action="{% url 'register' %}">
+                {% csrf_token %}
+                <input type="hidden" name="character_id" id="selectedCharacterId">
+                <input type="hidden" name="is_login" id="is_login" value="false"> <!-- Verstecktes Feld für den Modus -->
+                <label for="password">Passwort:</label>
+                <input type="password" name="password" id="password">
+                <button type="submit">Registrieren</button>
+                <button type="button" onclick="toggleLogin(true)">Anmelden</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{% static 'adventApp/character.js' %}"></script>
+</body>
+</html>

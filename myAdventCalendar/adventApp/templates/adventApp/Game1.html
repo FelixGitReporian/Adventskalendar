@@ -1,0 +1,18 @@
+<!-- decision_template.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ decision.text }}</h2>
+
+<!-- Hier könnten Sie die unterschiedlichen Entscheidungsoptionen anzeigen -->
+<form method="post" action="{% url 'vote' decision.id %}">
+    {% csrf_token %}
+    <!-- Annahme: Ihre Entscheidung hat zwei Optionen A und B -->
+    <input type="radio" id="choiceA" name="choice" value="A">
+    <label for="choiceA">Option A</label><br>
+    <input type="radio" id="choiceB" name="choice" value="B">
+    <label for="choiceB">Option B</label><br>
+    <button type="submit">Abstimmen</button>
+</form>
+{% endblock %}

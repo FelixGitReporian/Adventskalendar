@@ -1,0 +1,17 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="username">Benutzername:</label>
+    <input type="text" name="username" required>
+
+    <label for="password">Passwort:</label>
+    <input type="password" name="password" required>
+
+    <label for="character">Charakter wählen:</label>
+    <select name="character">
+        {% for character in characters %}
+        <option value="{{ character.id }}">{{ character.name }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Registrieren</button>
+</form>

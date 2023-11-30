@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main-content">
+    <div class="labyrinth-choice-container">
+        <h1>Willkommen im Labyrinthspiel!</h1>
+        <p>Wähle, ob du einem bestehenden Spiel beitreten oder ein neues starten möchtest.</p>
+
+        <!-- Optionen für das Spiel -->
+        <div id="game-options-modal" class="modal">
+            <div class="modal-content">
+                <h2>Willkommen beim Entscheidungsspiel!</h2>
+                <p>Wählen Sie eine der folgenden Optionen:</p>
+                <button id="join-labyrinth-game">Bestehendem Spiel beitreten</button>
+                <button id="start-new-labyrinth">Neues Spiel starten</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

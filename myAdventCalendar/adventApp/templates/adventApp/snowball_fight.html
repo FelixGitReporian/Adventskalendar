@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Schneeballschlacht
+{% endblock %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{% static 'adventApp/snowball_fight.css' %}">
+    <script src="{% static 'adventApp/snowball_fight.js' %}" defer></script>
+</head>
+<body>
+    <h1>Heute ist Schneeballschlacht angesagt, jeder hat fünf Schneebälle</h1>
+    <div id="message-box">{{ message }}</div>
+    <h2>Du wurdest {{ hits_received }} Mal getroffen!</h2>
+    <h2>Du hast {{ hits_made }} Mal getroffen!</h2>
+    <form id="snowball-form" method="post">
+        {% csrf_token %}
+        <label for="target">Wähle dein Ziel:</label>
+        <select name="target" id="target">
+            {% for character in characters %}
+                <option value="{{ character.id }}">{{ character.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Schneeball werfen</button>
+    </form>
+</body>
+{% endblock %}
