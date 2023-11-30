@@ -1,5 +1,5 @@
 # Adventskalendar
-Adventskalendar mit anrrativen und spielerischen Askpekten - für die ganze Familie
+Adventskalendar mit narrativen und spielerischen Askpekten - für die ganze Familie
 
 ## Projektbeschreibung
 
