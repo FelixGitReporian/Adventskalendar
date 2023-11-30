@@ -18,6 +18,7 @@ Hauptmerkmale
     Datenbank: SQLite (Standard-Datenbank von Django)
     
 ich benutze zum selber hosten unraid --> mysql --> Apache Webserver --> Gunicorn
+https://docs.djangoproject.com/en/4.2/howto/deployment/
 
 ## Installation und Einrichtung
 
