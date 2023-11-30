@@ -16,6 +16,8 @@ Hauptmerkmale
     Backend: Django (Python-basiertes Web-Framework)
     Frontend: HTML, CSS, JavaScript
     Datenbank: SQLite (Standard-Datenbank von Django)
+    
+    ich benutze zum selber hosten unraid --> mysql --> Apache Webserver --> Gunicorn
 
 ## Installation und Einrichtung
 
