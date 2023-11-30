@@ -1,0 +1,101 @@
+.character-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.character {
+    margin: 10px;
+    text-align: center; /* Zentriert den Text unter dem Bild */
+}
+
+.character.taken {
+    opacity: 0.5;
+    pointer-events: none; /* Deaktiviert Klicks auf das Element */
+}
+.character.taken img {
+    filter: grayscale(100%);
+}
+
+
+.character-name {
+    color: #800020; /* Bordeauxrot */
+}
+
+.character-image {
+    width: 280px; /* Beispielgröße */
+    height: 300px;
+    display: block; /* Macht das Bild zu einem Block-Element */
+    margin: 0 auto; /* Zentriert das Bild horizontal */
+    /* Rahmen als border-image anwenden */
+    background: url('/static/adventApp/rahmen.jpg') center/100% no-repeat;
+    background-size: contain; /* Stellt sicher, dass der Rahmen die richtige Größe hat */
+    border: 10px solid transparent; /* Stellen Sie die Breite des Rahmens ein */
+    border-image: url('/static/adventApp/rahmen2.jpg') 30 round; /* Pfad zum Rahmenbild */
+    border-image-slice: 30; /* Passt die Slice-Werte an die tatsächlichen Abmessungen des Rahmens an */
+    /* Weitere Stil-Definitionen für das Bild */
+    /* Weitere Styling-Regeln */
+}
+
+.modal {
+    display: none; /* Anfangs versteckt */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 600px; /* Begrenzt die maximale Breite */
+    margin: auto; /* Zentriert das Modal */
+    padding: 20px; /* Fügt innen Padding hinzu */
+    background-color: #f8f0e3; /* Farbe eines vergilbten Papiers */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: leichter Schatten für mehr Tiefe */
+    border-radius: 10px; /* Abgerundete Ecken */
+    overflow: auto; /* Ermöglicht Scrollen, falls der Inhalt zu lang ist */
+    /* Weitere Stile nach Bedarf */
+}
+.modal-content p {
+    text-align: justify; /* Oder 'left', je nach Vorliebe */
+    line-height: 1.6; /* Verbessert die Lesbarkeit */
+    /* Weitere Text-Stile nach Bedarf */
+}
+.modal-content button {
+    display: block; /* Macht den Button zu einem Block-Element */
+    margin: 20px auto; /* Zentriert den Button horizontal und fügt oben und unten Margin hinzu */
+    /* Weitere Stile für den Button nach Bedarf */
+}
+body {
+    background-image: url('/static/adventApp/hintergrund_charakter.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.main-content {
+    min-height: 1920px; /* oder die tatsächliche Höhe Ihres Bildes */
+    /* Weitere Stile für Ihren Haupt-Content */
+}
+.modal-content form {
+    /* Stil-Definitionen für das Formular */
+}
+
+.modal-content form input,
+.modal-content form button {
+    /* Stil-Definitionen für Input-Felder und Buttons */
+}
+.advent-number{
+    color: #f8f0e3; /* oder eine andere Farbe */
+    text-decoration: none;
+    font-size: 40px;
+    /* background-color: rgba(255, 255, 255, 0.7); /* Weiß mit etwas Transparenz */
+    border-radius: 5px; /* Für abgerundete Ecken */
+    padding: 5px;
+    background-color: rgba(255, 255, 0, 0.7); /* Helle Farbe beim Darüberfahren */
+    cursor: pointer; /* Zeigt an, dass es klickbar ist */
+    
+}
+

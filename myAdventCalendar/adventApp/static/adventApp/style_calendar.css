@@ -1,0 +1,29 @@
+
+
+body {
+    background-image: url('/static/adventApp/hintergrund_charakter.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 210vh; /* 100% der Viewport-Höhe */
+
+
+.advent-number{
+    position: absolute;
+    color: #f8f0e3; /* oder eine andere Farbe */
+    text-decoration: none;
+    font-size: 10px;
+    
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-size: contain; /* Ändern, um das Bild vollständig anzuzeigen */
+        height: auto; /* Dynamische Höhe */
+    }
+
+    .advent-number {
+        font-size: 12px; /* Größere Schrift für bessere Lesbarkeit */
+        position: static; /* Ändern, falls die absolute Positionierung auf kleinen Bildschirmen nicht funktioniert */
+    }
+}

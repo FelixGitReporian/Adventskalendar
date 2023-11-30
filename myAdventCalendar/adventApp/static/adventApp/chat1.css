@@ -1,0 +1,157 @@
+#chat-container {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 450px;
+    height: 600px;
+    background-color: #333; /* Dunkler Hintergrund */
+    color: white; /* Weiße Schrift */
+    border: 1px solid #555; /* Dunklere Grenze */
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+    flex-grow: 1;
+    z-index: 1000; /* Stellen Sie sicher, dass der z-index kleiner ist als der des Buttons */
+}
+
+#toggle-chat-btn {
+    position: fixed; /* Stellt sicher, dass der Button fest positioniert ist */
+    bottom: 630px; /* Stellen Sie diesen Wert so ein, dass der Button oberhalb des Chat-Fensters erscheint */
+    right: 20px; /* Passt die horizontale Position an */
+    z-index: 1001; /* Stellt sicher, dass der Button über dem Chat-Fenster angezeigt wird */
+    background-color: #4CAF50; /* Hintergrundfarbe des Buttons */
+    color: white; /* Textfarbe */
+    padding: 10px; /* Innenabstand */
+    border: none; /* Keine Umrandung */
+    text-align: center; /* Zentrierter Text */
+    text-decoration: none; /* Keine Textdekoration */
+    font-size: 16px; /* Schriftgröße */
+    cursor: pointer; /* Cursor-Stil */
+    border-radius: 5px; /* Abgerundete Ecken */
+}
+
+#chat-messages {
+    height: 540px; /* Höhe minus Höhe des Sendebereichs */
+    overflow-y: auto;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    border-bottom: 1px solid #555; /* Dunklere Trennlinie */
+    margin-right: 10px; /* Abstand zwischen Textfeld und Button */
+}
+
+/*#chat-input-container { */
+/*    height: 58px; /* Höhe des Sendebereichs */
+/*    display: flex;*/
+/*    align-items: center;*/
+
+#chat-input-container {
+    position: relative; /* Ermöglicht die absolute Positionierung von inneren Elementen */
+    height: 58px; /* Höhe des Sendebereichs */
+    display: flex;
+    align-items: center;
+    /* Restliche Stile beibehalten */
+} 
+
+
+    
+}
+button {
+    background-color: #444; /* Dunkler Hintergrund für den Button */
+    color: white; /* Weiße Schrift */
+    border: none; /* Keine sichtbare Grenze */
+    flex-shrink: 0; /* Verhindert, dass der Button kleiner wird */
+}
+
+#chat-input {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#chat-message {
+    width: 100%;
+    height: 50px;
+    flex-grow: 1;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    background-color: #333; /* Dunkler Hintergrund */
+    color: white; /* Weiße Schrift */
+    border: 1px solid #555; /* Dunklere Grenze */
+}
+.chat-input {
+    color: white; /* Farbe des Nachrichteninhalts */
+    flex-grow: 1; /* Nimmt verbleibenden Platz ein */
+    background-color: #444; /* Hintergrundfarbe für den Nachrichteninhalt */
+    padding: 5px;
+    border-radius: 5px; /* Abgerundete Ecken */
+    margin-left: 20%; /* Links Abstand, damit es neben dem Namen erscheint */
+}
+
+.chat-author {
+    font-weight: bold;
+    font-size: smaller;
+    color: #bbb; /* Helleres Grau für die Zeitangabe */
+    flex-basis: 20%; /* Setzt eine feste Basisbreite */
+    margin-right: 10 px; /* Mehr Abstand zwischen Autor und Nachricht */
+}
+
+.chat-time {
+    font-size: smaller;
+    font-style: italic;
+    color: #bbb;
+    position: absolute; /* Lässt die Zeit unter dem Namen erscheinen */
+    top: 20px; /* Abstand von oben, passen Sie dies an die Höhe des Autornamens an */
+    left: 0; /* Linksbündig unter dem Autornamen */
+}
+
+/* Ursprüngliche Stile beibehalten */
+
+/* Media Queries für Mobilgeräte */
+@media screen and (max-width: 768px) {
+    #chat-container {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%; /* Vollständige Breite auf kleinen Bildschirmen */
+        height: 400px; /* Reduzierte Höhe */
+        padding: 5px; /* Reduziertes Padding */
+    }
+
+    #toggle-chat-btn {
+        bottom: 410px; /* Positionierung über dem Chat-Container */
+        right: 10px; /* Anpassung der horizontalen Position */
+        padding: 5px; /* Reduziertes Padding */
+        font-size: 14px; /* Kleinere Schriftgröße */
+    }
+
+    #chat-messages {
+        height: 340px; /* Angepasste Höhe */
+        margin-right: 5px; /* Reduzierter Abstand */
+    }
+
+    #chat-input-container {
+        height: 50px; /* Reduzierte Höhe des Sendebereichs */
+    }
+
+    button {
+        font-size: 14px; /* Kleinere Schriftgröße */
+    }
+
+    #chat-input {
+        margin-top: 10px; /* Reduzierter oberer Abstand */
+    }
+
+    #chat-message {
+        height: 40px; /* Reduzierte Höhe */
+        margin-right: 10px; /* Reduzierter rechter Abstand */
+    }
+
+    .chat-author {
+        font-size: smaller; /* Beibehaltung der kleineren Schriftgröße */
+        margin-right: 100px; /* Reduzierter Abstand */
+    }
+
+    .chat-time {
+        /* Beibehaltung der Stile für die Zeitangabe */
+    }
+}
+

@@ -1,0 +1,28 @@
+#kuehlschrank {
+    position: relative; /* Setzt den Kühlschrank als relativ positioniertes Element */
+    width: 100%; /* Breite des Kühlschranks */
+    height: 200vh; /* Höhe des Kühlschranks */
+    background-size: cover; /* Stellt sicher, dass der Hintergrund des Kühlschranks die gesamte Fläche bedeckt */
+}
+
+.draggable {
+    position: absolute; /* Erlaubt es den Notizzetteln und Bildern, frei im Kühlschrank bewegt zu werden */
+    cursor: move; /* Ändert den Cursor in ein Verschiebe-Symbol */
+}
+
+.draggable.notizzettel {
+    width: 150px; /* Breite der Notizzettel */
+    height: 200px; /* Höhe der Notizzettel */
+    background-color: transparent; /* Statt weiß */
+    padding: 10px; /* Innenabstand der Notizzettel */
+    border-radius: 5px; /* Abgerundete Ecken der Notizzettel */
+    background-size: cover; /* Damit das Bild den gesamten Notizzettel bedeckt */
+    /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);  Schatten für die Notizzettel */
+}
+
+.draggable.bild img {
+    width: 150px; /* Breite des Bildes */
+    height: 200px; /* Höhe des Bildes */
+    object-fit: cover; /* Passt das Bild innerhalb des gegebenen Bereichs an */
+    border-radius: 5px; /* Abgerundete Ecken der Notizzettel */
+}

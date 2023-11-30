@@ -1,0 +1,14 @@
+/* Standard-Stile für das Video */
+video {
+    width: 100%;
+    max-width: 800px; /* Maximalbreite des Videos */
+    display: block;
+    margin: 0 auto; /* Zentriert das Video horizontal */
+}
+
+/* Media Query für Bildschirme kleiner als 600px in der Breite */
+@media screen and (max-width: 600px) {
+    video {
+        max-width: 100%; /* Volle Breite auf kleinen Bildschirmen */
+    }
+}

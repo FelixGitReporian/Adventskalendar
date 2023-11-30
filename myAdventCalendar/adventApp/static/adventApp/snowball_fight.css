@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0;
+    text-align: center;
+    padding: 20px;
+}
+
+#snowball-form {
+    margin: 20px auto;
+    display: inline-block;
+}
+
+select, button {
+    margin: 10px;
+    padding: 5px 10px;
+}
+
+#message-box {
+    margin-top: 20px;
+    color: blue;
+}
