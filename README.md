@@ -19,7 +19,7 @@ Hauptmerkmale
 
 ## Installation und Einrichtung
 
-    Repository klonen:
+Repository klonen:
 
     git clone https://github.com/FelixGitReporian/Adventskalendar.git
     cd AdventDecisionGame
