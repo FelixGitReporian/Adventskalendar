@@ -36,4 +36,3 @@ dependencies:
       - pytz==2023.3.post1
       - randomuser==1.6
       - six==1.16.0
-prefix: C:\Users\felix\anaconda3\envs\myDjangoEnv
