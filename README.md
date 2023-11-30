@@ -11,36 +11,36 @@ Hauptmerkmale
     Interaktive Chat-Funktion: Ermöglicht den Spielern, während des Spiels miteinander zu kommunizieren.
     Responsive Design: Die Anwendung ist sowohl auf Desktop- als auch auf mobilen Geräten nutzbar.
 
-Technologien
+## Technologien
 
     Backend: Django (Python-basiertes Web-Framework)
     Frontend: HTML, CSS, JavaScript
     Datenbank: SQLite (Standard-Datenbank von Django)
 
-Installation und Einrichtung
+## Installation und Einrichtung
 
     Repository klonen:
 
-    bash
+    git clone https://github.com/IhrGitHubName/AdventDecisionGame.git
+    cd AdventDecisionGame
 
-git clone https://github.com/IhrGitHubName/AdventDecisionGame.git
-cd AdventDecisionGame
 
-Abhängigkeiten installieren:
 
-bash
+## Abhängigkeiten installieren:
 
-pip install -r requirements.txt
+bash:
 
-Django-Anwendung ausführen:
+    pip install -r requirements.txt
 
-bash
+## Django-Anwendung ausführen:
+
+bash:
 
     python manage.py runserver
 
     Im Browser öffnen:
     Besuchen Sie http://localhost:8000 in Ihrem Webbrowser, um auf das Spiel zuzugreifen.
 
-Mitwirken
+### Mitwirken
 
 Ihr Beitrag zu diesem Projekt ist willkommen. Bitte erstellen Sie ein Issue oder senden Sie einen Pull-Request, wenn Sie eine Verbesserung vorschlagen möchten.
